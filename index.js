@@ -29,6 +29,7 @@ app.get("/boardlist", (req, res) => {
 app.get(`/boardlist/:id`, (req, res) => {
   //해당 게시글의 내용 읽기 위한 처리
   db.query(`select * from boardlist where boardno=${req.params.id}`);
+  //db.query(`update boardlist set viewcount + 1 where boardno=${req.params.id}`);
 });
 
 app.post("/boardWrite", (req, res) => {
